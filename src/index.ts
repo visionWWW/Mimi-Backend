@@ -9,11 +9,11 @@ let app = express();
 //   extended: true
 // }))
 
-// 모든 http method 허용, 스트링 리턴
-// app.use('/hello1', (req, res) => {
-//   res.send('Hello test!, 모든 http method를 허용하였습니다.');
-// })
-//
+//모든 http method 허용, 스트링 리턴
+  app.use('/', (req, res) => {
+  res.send('Hello test!, 모든 http method를 허용하였습니다.');
+})
+
 // app.get('/hello2', (req, res) => {
 //   res.send('Hello test!, get 방식만 허용했습니다.');
 // })
@@ -64,6 +64,6 @@ let app = express();
 
 createConnection().then(connection => {
   app.listen(8080, () => {
-    console.log('server is listening 8080');
+    console.log('잘 뜹니다~');
   });
 });
