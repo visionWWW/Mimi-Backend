@@ -1,6 +1,6 @@
 import express from 'express';
 import {createConnection} from "typeorm";
-import {Photo} from "./entity/Photo";
+// import {Photo} from "./entity/Photo";
 import {User} from "./entity/User";
 
 let app = express();
@@ -67,16 +67,16 @@ let app = express();
 createConnection().then(connection => {
   app.listen(8080, async () => {
     console.log('잘 뜹니다~');
-    const photo1 = new Photo();
-    photo1.url = "me.jpg";
-    await connection.manager.save(photo1);
+    // const photo1 = new Photo();
+    // photo1.url = "me.jpg";
+    // await connection.manager.save(photo1);
 
-    const user = new User();
-    user.nickname = "John";
-    user.password = 1234;
-    user.photos = [photo1]; //foreign key가 들어간다
+    // const user = new User();
+    // user.nickname = "John";
+    // user.password = 1234;
+    // user.photos = [photo1]; //foreign key가 들어간다
 
-    await connection.manager.save(user); //photo는 할 필요 없음
+    // await connection.manager.save(user); //photo는 할 필요 없음
 
   });
 

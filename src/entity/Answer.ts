@@ -1,5 +1,6 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn} from "typeorm";
 import {json} from "express";
+import {User} from "./User";
 
 @Entity()
 export class Answer {
@@ -13,4 +14,7 @@ export class Answer {
     @Column()
     grade: string;
 
+    @OneToOne(() => User)
+    @JoinColumn()
+    user: User;
 }

@@ -1,5 +1,6 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn} from "typeorm";
 import {json} from "express";
+import {Answer} from "./Answer";
 // import {Photo} from "./Photo";
 
 @Entity()
@@ -16,4 +17,8 @@ export class User {
 
     // @OneToMany(() => Photo, photo => photo.user)
     // photos: Photo[];
+
+    // @OneToOne(() => Answer, answer => answer.user)
+    // @JoinColumn()
+    // answer: Answer;
 }
