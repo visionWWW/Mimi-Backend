@@ -4,11 +4,11 @@ module.exports = {
   "type": "mysql",
   "host": "localhost",
   "port": 3306,
-  "username": "eastflag",
+  "username": "snow",
   "password": "12345678",
-  "database": "eastdb",
+  "database": "snowdb",
   "synchronize": true,
-  "logging": false,
+  "logging": true,
   "entities": [
     "src/entity/**/*.ts"
   ],
