@@ -1,8 +1,9 @@
 import express from 'express';
 import {createConnection} from "typeorm";
+import {Router} from "express";
 // import {Photo} from "./entity/Photo";
 import {User} from "./entity/User";
-
+const router = Router();
 let app = express();
 
 // express에는 json 데이터를 파싱하는 모듈이 내장되어있다.
@@ -63,6 +64,8 @@ let app = express();
 // app.listen(8080, () => {
 //   console.log('server is listening 8080');
 // });
+
+app.use('/api', router);
 
 createConnection().then(connection => {
   app.listen(8080, async () => {
