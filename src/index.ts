@@ -3,7 +3,7 @@ import {createConnection} from "typeorm";
 import {Router} from "express";
 // import {Photo} from "./entity/Photo";
 import {User} from "./entity/User";
-const router = Router();
+import router from "./router/index";
 let app = express();
 
 // express에는 json 데이터를 파싱하는 모듈이 내장되어있다.
