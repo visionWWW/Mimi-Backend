@@ -2,11 +2,11 @@ const SnakeNamingStrategy = require("typeorm-naming-strategies").SnakeNamingStra
 
 module.exports = {
   "type": "mysql",
-  "host": "localhost",
+  "host": "database-1.cc6ksr76fgcm.us-east-2.rds.amazonaws.com",
   "port": 3306,
-  "username": "snow",
-  "password": "12345678",
-  "database": "snowdb",
+  "username": "admin",
+  "password": "gksdldma",
+  "database": "mimidb",
   "synchronize": true,
   "logging": true,
   "entities": [
