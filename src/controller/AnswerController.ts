@@ -5,9 +5,9 @@ export class AnswerController{
     static addAnswer=async (req,res)=>{
         const {id, name, grade} =req.body;
         const answer = new Answer();
-        answer.id=1;
-        answer.name="ssook";
-        answer.grade="10000";
+        answer.id=id;
+        answer.name=name;
+        answer.grade=grade;
         const result=await getConnection().getRepository(Answer).save(answer);
 
         res.send(result);
