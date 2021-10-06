@@ -6,11 +6,26 @@ import {User} from "./entity/User";
 import router from "./router/index";
 let app = express();
 
-  app.use('/', (req, res) => {
-  res.send('Hello test!, 모든 http method를 허용하였습니다.');
+app.use(express.urlencoded({
+  extended: true
+}))
+
+//   app.use('/', (req, res) => {
+//   res.send('Hello test!, 모든 http method를 허용하였습니다.');
+// })
+
+app.post('/answer', (req, res) => {
+  const result = {
+    id: 1,
+    name: 'ssook',
+    grade: '3.0'
+  };
+  res.send(result);
 })
 
+app.use(express.json());
 app.use('/api', router);
+
 
 createConnection().then(connection => {
   app.listen(8080, async () => {
