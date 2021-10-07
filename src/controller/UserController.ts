@@ -1,7 +1,7 @@
 import {User} from "../entity/User";
 import {getConnection} from "typeorm";
 
-export class ReviewController{
+export class UserController{
     static addUser=async (req,res)=>{
         const {id, nickname, password} =req.body;
         const user = new User();
