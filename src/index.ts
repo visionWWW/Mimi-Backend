@@ -23,6 +23,23 @@ app.post('/answer', (req, res) => {
   res.send(result);
 })
 
+app.post('/hashtag', (req, res) => {
+  const result = {
+    id: 1,
+    name: 'ssook'
+  };
+  res.send(result);
+})
+
+app.post('/review', (req, res) => {
+  const result = {
+    id: 1,
+    grade: '3.0',
+    explain: '짱 맛잇어요'
+  };
+  res.send(result);
+})
+
 app.use(express.json());
 app.use('/api', router);
 
