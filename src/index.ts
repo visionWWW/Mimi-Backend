@@ -14,15 +14,6 @@ app.use(express.urlencoded({
 //   res.send('Hello test!, 모든 http method를 허용하였습니다.');
 // })
 
-app.post('/answer', (req, res) => {
-  const result = {
-    id: 1,
-    name: 'ssook',
-    grade: '3.0'
-  };
-  res.send(result);
-})
-
 app.post('/hashtag', (req, res) => {
   const result = {
     id: 1,

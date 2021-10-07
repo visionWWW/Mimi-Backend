@@ -1,6 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn} from "typeorm";
 import {json} from "express";
-import {Answer} from "./Answer";
 // import {Photo} from "./Photo";
 
 @Entity()
