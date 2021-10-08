@@ -5,7 +5,7 @@ import {Hashtag} from "./Hashtag";
 @Entity()
 export class Review {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('increment')
     id: number;
 
     @Column()
