@@ -19,6 +19,7 @@ export class UserController{
         const result = await getConnection().getRepository(User).findOne({where: {nickname}});
 
         if (!result) {
+            alert("실패")
             return res.status(400).send({ message: "User Not found." });
         }
 
@@ -29,6 +30,8 @@ export class UserController{
         // console.log(typeof(result.password));
 
         if (password!==result.password) {
+            // console.log("비밀번호 실패")
+            res.send("");
             return res.status(400).send({ message: "Invalid password" });
         }
 
