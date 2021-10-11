@@ -11,8 +11,8 @@ export class User {
     @Column({length: 20})
     email: string;
 
-    @Column()
-    password: number;
+    @Column({length: 11})
+    password: string;
 
     // @OneToMany(() => Photo, photo => photo.user)
     // photos: Photo[];
