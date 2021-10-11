@@ -1,6 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToOne, ManyToMany, JoinColumn, JoinTable} from "typeorm";
 import {User} from "./User";
-import {Hashtag} from "./Hashtag";
 
 @Entity()
 export class Review {
@@ -17,11 +16,11 @@ export class Review {
     @Column({length: 100})
     restaurantName: string;
 
+    @Column("simple-array")
+    hashtag: string[];
+
     @OneToOne(() => User)
     @JoinColumn()
     user: User;
 
-    @ManyToMany(() => Hashtag, hashtag =>hashtag.id)
-    @JoinTable()
-    hashtag: Hashtag[];
 }
