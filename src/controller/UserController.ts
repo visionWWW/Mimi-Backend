@@ -29,13 +29,6 @@ export class UserController{
         // console.log(typeof(result.password));
 
         if (password!==result.password) {
-            console.log(password);
-            console.log(result.password);
-
-            console.log(typeof(password));
-            console.log(typeof(result.password));
-
-            console.log(password===result.password)
             return res.status(400).send({ message: "Invalid password" });
         }
 
