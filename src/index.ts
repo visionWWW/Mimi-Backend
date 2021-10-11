@@ -5,11 +5,11 @@ import {Router} from "express";
 import {User} from "./entity/User";
 import router from "./router/index";
 let app = express();
-
+const cors = require('cors');
 app.use(express.urlencoded({
   extended: true
 }))
-
+app.use(cors());
 //   app.use('/', (req, res) => {
 //   res.send('Hello test!, 모든 http method를 허용하였습니다.');
 // })
