@@ -6,5 +6,6 @@ const router = Router();
 router.post('/review', ReviewController.addReview);
 router.post('/user', UserController.addUser);
 router.post('/sign-in', UserController.findUser);
+router.get('/review-find/:id', ReviewController.findReview);
 export default router;
 

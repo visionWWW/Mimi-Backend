@@ -31,6 +31,13 @@ app.post('/review', (req, res) => {
   res.send(result);
 })
 
+app.get('/review-find', (req, res) => {
+  const result = {
+    id: 7
+  };
+  res.send(result);
+})
+
 app.use(express.json());
 app.use('/api', router);
 
