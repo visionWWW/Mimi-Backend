@@ -1,4 +1,14 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToOne, ManyToMany, JoinColumn, JoinTable} from "typeorm";
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    OneToOne,
+    ManyToMany,
+    JoinColumn,
+    JoinTable,
+    OneToMany,
+    ManyToOne
+} from "typeorm";
 import {User} from "./User";
 
 @Entity()
@@ -19,8 +29,7 @@ export class Review {
     @Column("simple-array")
     hashtag: string[];
 
-    @OneToOne(() => User)
-    @JoinColumn()
-    user: User;
+    @ManyToOne(() => User, user => user.review)
+    user: User[];
 
 }
