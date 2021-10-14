@@ -18,7 +18,7 @@ export class ReviewController{
 
     static findReview = async (req, res) => {
         const {id} = req.params;
-        const result = await getConnection().getRepository(Review).find({ user : Equal(id) });
+        const result = await getConnection().getRepository(Review).find({ users : Equal(id) });
         res.send(result);
     }
 }

@@ -30,6 +30,6 @@ export class Review {
     hashtag: string[];
 
     @ManyToOne(() => User, user => user.review)
-    user: User[];
+    users: User[];
 
 }
