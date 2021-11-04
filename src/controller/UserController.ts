@@ -19,15 +19,8 @@ export class UserController{
         const result = await getConnection().getRepository(User).findOne({where: {nickname}});
 
         if (!result) {
-            alert("실패")
             return res.status(400).send({ message: "User Not found." });
         }
-
-        // console.log(password);
-        // console.log(result.password);
-        //
-        // console.log(typeof(password));
-        // console.log(typeof(result.password));
 
         if (password!==result.password) {
             // console.log("비밀번호 실패")
@@ -37,6 +30,17 @@ export class UserController{
 
         console.log(result);
 
+        res.send(result);
+    }
+
+    static findID = async (req, res) => {
+        const {id} = req.body;
+        const result = await getConnection().getRepository(User).findOne({where: {id}});
+
+        if (!result) {
+            return res.status(400).send({ message: "User Not found." });
+        }
+        console.log(result);
         res.send(result);
     }
 }
