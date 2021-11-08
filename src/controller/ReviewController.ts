@@ -4,12 +4,17 @@ import {Equal, getConnection} from "typeorm";
 
 export class ReviewController{
     static addReview=async (req,res)=>{
-        const {id, grade, hashtag, explain} =req.body;
+        const {id, grade, hashtag, explain, user_id} =req.body;
+
+        const user = await getConnection().getRepository(User).find({id: user_id});
+
         const review = new Review();
         review.id=id;
         review.grade=grade;
         review.hashtag=hashtag;
         review.explain=explain;
+        review.user=user;
+        console.log(user);
 
         const result=await getConnection().getRepository(Review).save(review);
 
