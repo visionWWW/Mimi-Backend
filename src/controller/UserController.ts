@@ -30,16 +30,18 @@ export class UserController{
         const firstUser = await getConnection()
             .getRepository(User)
             .createQueryBuilder()
-            .select("User.nickname","User.id")
+            .select(['User.id','User.nickname'])
             .from(User,"user")
             .where(  "User.nickname=:nickname",{nickname})
             .getOne();
+
 
         console.log(result);
         //res.send()
         res.send(result);
         console.log(firstUser);
         res.send(firstUser);
+        res.send();
     }
 
     static findID = async (req, res) => {
