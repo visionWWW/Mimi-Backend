@@ -15,9 +15,8 @@ export class UserController{
 
     static findUser = async (req, res) => {
         const {nickname, password} = req.body;
-
         const result = await getConnection().getRepository(User).findOne({where: {nickname}});
-
+        //const result2 = await getConnection().getRepository(User).findOne({where: {id}});
         if (!result) {
             return res.status(400).send({ message: "User Not found." });
         }
@@ -28,9 +27,19 @@ export class UserController{
             return res.status(400).send({ message: "Invalid password" });
         }
 
-        console.log(result);
+        const firstUser = await getConnection()
+            .getRepository(User)
+            .createQueryBuilder()
+            .select("User.nickname","User.id")
+            .from(User,"user")
+            .where(  "User.nickname=:nickname",{nickname})
+            .getOne();
 
+        console.log(result);
+        //res.send()
         res.send(result);
+        console.log(firstUser);
+        res.send(firstUser);
     }
 
     static findID = async (req, res) => {
@@ -42,5 +51,6 @@ export class UserController{
         }
         console.log(result);
         res.send(result);
+
     }
 }
