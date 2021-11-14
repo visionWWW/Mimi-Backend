@@ -8,5 +8,6 @@ router.post('/user', UserController.addUser);
 router.post('/sign-in', UserController.findUser);
 router.get('/review-find/:id', ReviewController.findReview);
 router.get('/user-find/:id', UserController.findID);
+router.get('/log-in/:id', UserController.firstUser);
 export default router;
 

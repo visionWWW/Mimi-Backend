@@ -26,22 +26,22 @@ export class UserController{
             res.send("");
             return res.status(400).send({ message: "Invalid password" });
         }
+        console.log(result);
+        res.send(result);
+        res.send();
+    }
 
-        const firstUser = await getConnection()
+    static firstUser = async (req,res)=>{
+        const {nickname} = req.body;
+        const result = await getConnection()
             .getRepository(User)
             .createQueryBuilder()
             .select(['User.id','User.nickname'])
             .from(User,"user")
             .where(  "User.nickname=:nickname",{nickname})
-            .getOne();
-
-
+            .getRawOne()
         console.log(result);
-        //res.send()
         res.send(result);
-        console.log(firstUser);
-        res.send(firstUser);
-        res.send();
     }
 
     static findID = async (req, res) => {
