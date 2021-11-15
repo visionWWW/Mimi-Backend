@@ -14,7 +14,7 @@ export class ReviewController{
         review.hashtag=hashtag;
         review.explain=explain;
         review.restaurantName=restaurant_name;
-        review.user=user;
+        review.user=user_id;
         console.log(user);
 
         const result=await getConnection().getRepository(Review).save(review);
