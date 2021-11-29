@@ -43,7 +43,7 @@ app.use('/api', router);
 
 
 createConnection().then(connection => {
-  app.listen(8080, async () => {
+  app.listen(5000, async () => {
     console.log('잘 뜹니다~');
     // const photo1 = new Photo();
     // photo1.url = "me.jpg";
