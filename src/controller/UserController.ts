@@ -22,8 +22,7 @@ export class UserController{
         }
 
         if (password!==result.password) {
-            // console.log("비밀번호 실패")
-            res.send("");
+            console.log("비밀번호 실패");
             return res.status(400).send({ message: "Invalid password" });
         }
         console.log(result);
