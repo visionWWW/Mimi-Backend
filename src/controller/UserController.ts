@@ -39,6 +39,9 @@ export class UserController{
             .from(User,"user")
             .where(  "User.nickname=:nickname",{nickname})
             .getRawOne()
+        if (!result) {
+            return res.status(400).send({ message: "User Not found." });
+        }
         console.log(result);
         res.send(result);
     }
