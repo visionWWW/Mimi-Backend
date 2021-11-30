@@ -28,7 +28,6 @@ export class UserController{
         }
         console.log(result);
         res.send(result);
-        res.send();
     }
 
     static firstUser = async (req,res)=>{
