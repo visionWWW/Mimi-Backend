@@ -12,7 +12,7 @@ export class User {
     @Column({length: 20})
     nickname: string;
 
-    @Column({length: 11})
+    @Column({length: 20})
     password: string;
 
     @OneToMany(() => Review, review => review.user)
